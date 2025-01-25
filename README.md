@@ -29,3 +29,15 @@ Usage Instructions:
 
     An interview candidate will find it useful for creating different resumes for different job roles appropriately in short span of time.
     A job seeker will be able to use ATS and also manually verify the resumes easily avoiding the need to go through all the skills and experiences of every candidate    
+
+Challenges:
+
+        Resumes come in different formats (PDF, DOCX, TXT) and structures, making it difficult to extract information accurately.
+        Job descriptions vary in structure and terminology, making it hard to extract the most relevant skills and qualifications.
+
+Sollutions:
+
+        Use Natural Language Processing (NLP) and Optical Character Recognition (OCR) for parsing different file formats.
+        Standardize extracted information into a structured format (JSON, database schema)
+        Implement industry-specific ontologies to recognize synonyms (e.g., "Software Engineer" vs. "Developer")
+        
