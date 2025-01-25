@@ -1,0 +1,14 @@
+Step 1
+download the app.py and save it in default python save location
+
+Step 2
+create a file know as "templates" on python location and save the index.html file
+
+Step 3
+RUN the code
+upload the required files (Resume and Job Description)
+
+Step 4
+download the AI Generated resume
+
+ 

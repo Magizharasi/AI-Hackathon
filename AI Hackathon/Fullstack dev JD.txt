@@ -1,0 +1,21 @@
+Full-Stack Developer  
+
+At TechEdge, we are seeking a talented and driven Full-Stack Developer to join our dynamic team. Our mission is to create cutting-edge web applications that improve user experiences.
+
+-REST API, GraphQL ,TensorFlow, pandas, NumPy, Scikit-learn  
+- Collaborate with product managers and designers to create intuitive user interfaces.  
+- Implement and optimize database solutions (PostgreSQL and MongoDB).  
+- Develop REST APIs and integrate third-party services.  
+- Manage deployments using AWS.  
+- Bachelor’s degree in Computer Science, Software Engineering, or related field.  
+- 3+ years of experience in full-stack development.    
+- Strong understanding of database management and optimization.  
+- Experience with cloud platforms like AWS and containerization tools like Docker.  
+- Knowledge of Agile development methodologies.  
+- Strong problem-solving and communication skills.  
+- Familiarity with CI/CD pipelines and version control (Git).  
+ 
+Other details
+- Competitive salary and performance-based bonuses.  
+- Flexible working hours and remote-friendly environment.  
+- Learning and development opportunities.  

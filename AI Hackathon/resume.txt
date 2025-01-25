@@ -1,0 +1,37 @@
+John Doe  
+Email: john.doe@example.com | Phone: (123) 456-7890 | LinkedIn: linkedin.com/in/johndoe  
+
+Professional Summary:
+Results-oriented software engineer with 5+ years of experience developing scalable web applications and working on full-stack development. Expertise in Python, JavaScript, and cloud technologies.
+ 
+Strength:
+- Programming Languages: Python, JavaScript,  
+- Frameworks: , Django, React.js, Node.js  
+- Databases: PostgreSQL, MongoDB, 
+- Cloud: AWS (EC2, S3, Lambda) 
+- Others: Git, CI/CD, REST APIs, Agile Methodology  
+
+Experiences:
+Software Engineer | Tech Innovators | January 2020 – Present  
+- Developed and maintained a Flask-based API serving 1M+ users daily.  
+- Improved application performance by 30% by optimizing database queries.  
+- Led a team of 5 engineers to develop a real-time chat application using React.js.  
+
+Junior Developer | NextGen Solutions | June 2018 – December 2019  
+- Built responsive web applications using React and Flask.  
+- Automated deployment pipelines using Jenkins and Docker.  
+- Collaborated with cross-functional teams to deliver projects on time.  
+frameworks: Flask, 
+
+Education:
+Bachelor of Science in Computer Science | XYZ University | Graduated: 2018  
+
+Certifications:  
+- AWS Certified Solutions Architect  
+- Certified Scrum Master (CSM)
+
+Strength:
+-AWS
+-Java Script
+-Problem Solving
+-Python

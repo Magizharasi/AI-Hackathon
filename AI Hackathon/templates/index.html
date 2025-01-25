@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Match Analyzer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+        .pie-chart-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .pie-chart-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .result-section {
+            margin-top: 30px;
+        }
+        .result-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .result-section ul li {
+            background: #e9f7ef;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                Skill Match Analyzer
+            </div>
+            <div class="card-body">
+                <form id="upload-form">
+                    <div class="mb-3">
+                        <label for="resume" class="form-label">Upload Resume</label>
+                        <input type="file" class="form-control" id="resume" name="resume" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="job-description" class="form-label">Upload Job Description</label>
+                        <input type="file" class="form-control" id="job-description" name="job_description" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Analyze</button>
+                </form>
+                <div id="results" class="result-section d-none">
+                    <h5 class="mt-4">Analysis Results</h5>
+                    <p><strong>Matched Skills:</strong></p>
+                    <ul id="matched-skills"></ul>
+                    <p><strong>Percentage Match:</strong> <span id="percentage-match"></span>%</p>
+                    <div class="pie-chart-container">
+                        <h5>Skill Match Visualization</h5>
+                        <img id="pie-chart" src="" alt="Pie Chart">
+                    </div>
+                    <div class="mt-3">
+                        <a id="download-resume" class="btn btn-success w-100" href="#" target="_blank">
+                            <i class="fas fa-download"></i> Download Updated Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData();
+            formData.append('resume', document.getElementById('resume').files[0]);
+            formData.append('job_description', document.getElementById('job-description').files[0]);
+
+            try {
+                const response = await fetch('/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to analyze files. Please try again.');
+                }
+
+                const data = await response.json();
+
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+
+                // Display results
+                document.getElementById('results').classList.remove('d-none');
+                const matchedSkillsList = document.getElementById('matched-skills');
+                matchedSkillsList.innerHTML = '';
+                data.matching_skills.forEach(skill => {
+                    const li = document.createElement('li');
+                    li.textContent = skill;
+                    matchedSkillsList.appendChild(li);
+                });
+
+                document.getElementById('percentage-match').textContent = data.percentage_match;
+                document.getElementById('pie-chart').src = data.pie_chart_path;
+                document.getElementById('download-resume').href = data.pdf_path;
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+</body>
+</html>
